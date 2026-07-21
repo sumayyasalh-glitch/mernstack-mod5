@@ -1,0 +1,6 @@
+import { useState } from 'react';
+export default function Contact() {
+  const [sent, setSent] = useState(false); const [form, setForm] = useState({ name:'', email:'', message:'' });
+  const submit = (event) => { event.preventDefault(); setSent(true); event.currentTarget.reset(); };
+  return <div className="container py-5"><div className="auth-card card shadow-sm mx-auto"><div className="card-body p-4"><h1 className="h3">Contact us</h1><p className="text-secondary">We normally reply within one business day.</p>{sent && <div className="alert alert-success">Thanks — your message has been received.</div>}<form onSubmit={submit}><label className="form-label w-100">Name<input required className="form-control mt-1" onChange={(e) => setForm({...form,name:e.target.value})}/></label><label className="form-label w-100">Email<input required type="email" className="form-control mt-1" onChange={(e) => setForm({...form,email:e.target.value})}/></label><label className="form-label w-100">Message<textarea required minLength="10" rows="5" className="form-control mt-1" onChange={(e) => setForm({...form,message:e.target.value})}/></label><button className="btn btn-dark">Send message</button></form></div></div></div>;
+}

@@ -1,0 +1,12 @@
+:root { font-family: Inter, ui-sans-serif, system-ui, sans-serif; color: #1c2430; background: #f7f8fa; }
+body { margin: 0; min-width: 320px; background: #f7f8fa; }
+#root { min-height: 100vh; display: flex; flex-direction: column; }
+main { flex: 1; }
+.navbar-brand { letter-spacing: -.4px; }
+.nav-link.active { color: #fff !important; font-weight: 700; }
+.card { border: 0; border-radius: 14px; overflow: hidden; }
+.card-img-top { transition: transform .2s ease; }
+.card:hover .card-img-top { transform: scale(1.03); }
+.auth-card { max-width: 520px; }
+footer { background: white; margin-top: 2rem; }
+@media (max-width: 575px) { .navbar { align-items: flex-start !important; } .navbar-nav { flex-direction: row; gap: .35rem; } }
