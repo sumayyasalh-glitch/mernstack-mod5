@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: shopverse-api
+    runtime: node
+    rootDir: ecommercebackend
+    buildCommand: npm install
+    startCommand: npm start
+    autoDeploy: true
+    envVars:
+      - key: NODE_VERSION
+        value: 20
+      - key: MONGODB_URI
+        sync: false
+      - key: JWT_SECRET
+        generateValue: true
+      - key: FRONTEND_URL
+        sync: false

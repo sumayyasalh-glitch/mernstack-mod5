@@ -17,7 +17,7 @@ function Home() {
         setLoading(true); setError('');
         const res = await api.get('/products', { params: { search, category, sort } });
         setProducts(res.data);
-      } catch (error) {
+      } catch {
         setError('Products could not be loaded. Check that the API is running.');
       } finally { setLoading(false);
       }
